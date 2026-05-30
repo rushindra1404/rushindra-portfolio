@@ -332,10 +332,10 @@ const Work = () => {
                               </div>
                             </div>
                           ) : (
-                            <img src={cert.image} alt={cert.title} className="archive-item-img" />
-                          )}
-                          <a href={cert.link} target="_blank" rel="noopener noreferrer" className="archive-item-view-btn">
-                            View Full ↗
+                             <img src={cert.image.startsWith("/") ? import.meta.env.BASE_URL + cert.image.slice(1) : cert.image} alt={cert.title} className="archive-item-img" />
+                           )}
+                           <a href={cert.link.startsWith("/") ? import.meta.env.BASE_URL + cert.link.slice(1) : cert.link} target="_blank" rel="noopener noreferrer" className="archive-item-view-btn">
+                             View Full ↗
                           </a>
                         </div>
                         

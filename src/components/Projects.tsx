@@ -184,7 +184,7 @@ const ProjectCard = ({ project, index, cardRef }: ProjectCardProps) => {
         <div className="project-card-interactive-showcase">
           <div className="visual-image-container">
             <img 
-              src={project.image} 
+              src={project.image.startsWith("/") ? import.meta.env.BASE_URL + project.image.slice(1) : project.image} 
               alt={project.title} 
               className="visual-showcase-img"
               loading="lazy"
@@ -268,7 +268,7 @@ const ProjectCard = ({ project, index, cardRef }: ProjectCardProps) => {
       <div className="project-card-interactive-showcase">
         <div className="visual-image-container">
           <img 
-            src={project.image} 
+            src={project.image.startsWith("/") ? import.meta.env.BASE_URL + project.image.slice(1) : project.image} 
             alt={project.title} 
             className="visual-showcase-img"
             loading="lazy"
@@ -570,7 +570,7 @@ const Projects = () => {
               // Standard chapters mobile template
               <>
                 <div className="wibify-mobile-visual">
-                  <img src={project.image} alt={project.title} loading="lazy" />
+                  <img src={project.image.startsWith("/") ? import.meta.env.BASE_URL + project.image.slice(1) : project.image} alt={project.title} loading="lazy" />
                 </div>
                 <div className="wibify-mobile-story">
                   <div className="wibify-chapter-badge">{project.badge}</div>

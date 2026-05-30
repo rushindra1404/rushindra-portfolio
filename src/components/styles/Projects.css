@@ -1,0 +1,1168 @@
+/* Projects.css - Climbing Glassmorphic Card Storytelling Stack */
+
+.projects-section-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: var(--cMaxWidth);
+  margin: auto;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.projects-header-container {
+  width: var(--cWidth);
+  margin: 0 auto;
+  padding-top: 100px;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.projects-header-container h2 {
+  font-size: 70px;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.projects-header-container h2 span {
+  color: var(--accentColor, #c2a4ff);
+  text-shadow: 0 0 20px rgba(194, 164, 255, 0.3);
+}
+
+.projects-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: #adacac;
+  opacity: 0.85;
+  margin-top: 10px;
+  margin-bottom: 0;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Scroll Stack Container - sticky during scroll on desktop */
+.wibify-sticky-content {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.projects-stack-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Consolidated Project Card - Glassmorphism Side-by-Side */
+.project-chapter-card {
+  position: absolute;
+  top: 10vh; /* Lock card position vertically */
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--cWidth);
+  max-width: 1200px;
+  height: 80vh;
+  min-height: 580px;
+  background: rgba(13, 9, 20, 0.82); /* High opacity premium glassmorphism */
+  border: 1px solid rgba(194, 164, 255, 0.28); /* Glowing purple border */
+  border-radius: 32px;
+  box-shadow: 0 45px 90px rgba(0, 0, 0, 0.8),
+              inset 0 0 40px rgba(194, 164, 255, 0.05);
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 50px;
+  box-sizing: border-box;
+  gap: 50px;
+  overflow: hidden;
+  will-change: transform, filter, opacity;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  margin: 0;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-chapter-card:hover {
+  border-color: rgba(194, 164, 255, 0.45);
+  box-shadow: 0 50px 100px rgba(194, 164, 255, 0.1),
+              inset 0 0 45px rgba(194, 164, 255, 0.08);
+}
+
+/* Reverse layout for alternating panels */
+.project-chapter-card.layout-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Decorative Glow overlays inside cards */
+.project-card-glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 1;
+  bottom: -180px;
+  right: -180px;
+  transition: opacity 0.5s ease;
+}
+
+.project-chapter-card:hover .project-card-glow {
+  opacity: 0.26;
+}
+
+/* Floating Glassmorphic Info Panel (Transformed to transparent flex child) */
+.project-glass-info-panel {
+  flex: 1.1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  z-index: 5;
+  padding: 10px 0;
+}
+
+.project-chapter-badge {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--accentColor, #c2a4ff);
+  text-shadow: 0 0 10px rgba(194, 164, 255, 0.3);
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 4px 0;
+  color: #ffffff;
+}
+
+.project-tagline {
+  font-size: 15.5px;
+  font-weight: 300;
+  color: #adacac;
+  margin: 0 0 25px 0;
+  line-height: 1.4;
+}
+
+/* Consolidated Process Story Timeline */
+.project-story-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-left: 20px;
+  flex: 1;
+  justify-content: center;
+}
+
+.project-story-timeline::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(194, 164, 255, 0.3) 0%, rgba(194, 164, 255, 0.05) 100%);
+}
+
+.wibify-timeline-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.wibify-timeline-node::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accentColor, #c2a4ff);
+  box-shadow: 0 0 8px var(--accentColor, #c2a4ff);
+}
+
+.wibify-node-header {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accentColor, #c2a4ff);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.wibify-node-body {
+  font-size: 13px;
+  font-weight: 300;
+  color: #eae5ec;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Future Vision Cinematic Card Styles */
+.future-vision-title {
+  background: linear-gradient(135deg, #ffffff 40%, var(--accentColor, #c2a4ff) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(194, 164, 255, 0.15);
+}
+
+.future-concepts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  flex: 1;
+  justify-content: center;
+}
+
+.future-concept-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.concept-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accentColor, #c2a4ff);
+  box-shadow: 0 0 8px var(--accentColor, #c2a4ff);
+  margin-top: 6px;
+}
+
+.concept-info h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.concept-info p {
+  font-size: 12.5px;
+  font-weight: 300;
+  color: #adacac;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Technology Interactive Badges */
+.project-tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-node-chip {
+  background: rgba(194, 164, 255, 0.04);
+  border: 1px solid rgba(194, 164, 255, 0.15);
+  color: #eae5ec;
+  padding: 5px 12px;
+  border-radius: 18px;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tech-node-chip:hover {
+  background: rgba(194, 164, 255, 0.12);
+  border-color: rgba(194, 164, 255, 0.4);
+  transform: translateY(-2px);
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(194, 164, 255, 0.15);
+}
+
+
+/* Interactive Showcase Panel holding 3D visualizations & Orbits */
+.project-card-interactive-showcase {
+  flex: 0.9;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 4;
+}
+
+/* Image Container inside Showcase Column */
+.visual-image-container {
+  width: 100%;
+  height: 90%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 2;
+}
+
+.visual-showcase-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-chapter-card:hover .visual-showcase-img {
+  transform: scale(1.05);
+}
+
+.visual-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(10, 8, 14, 0.5) 0%, rgba(10, 8, 14, 0) 50%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Atmospheric 3D details inside Visual Column */
+.visual-bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(194, 164, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.visual-glowing-orb {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accentColor, #c2a4ff) 0%, transparent 70%);
+  filter: blur(45px);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 1;
+  animation: orbFloat 12s ease-in-out infinite alternate;
+}
+
+@keyframes orbFloat {
+  0% { transform: translate(-25px, -25px); }
+  100% { transform: translate(25px, 25px); }
+}
+
+.wibify-orbiting-ring {
+  position: absolute;
+  width: 104%;
+  height: 104%;
+  border: 1.5px dashed rgba(194, 164, 255, 0.14);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  animation: slowSpin 35s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -2%;
+  left: -2%;
+}
+
+@keyframes slowSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.wibify-node-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accentColor, #c2a4ff);
+  box-shadow: 0 0 12px var(--accentColor, #c2a4ff);
+}
+
+.wibify-node-dot:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, -50%); }
+.wibify-node-dot:nth-child(2) { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+.wibify-node-dot:nth-child(3) { left: 0; top: 50%; transform: translate(-50%, -50%); }
+.wibify-node-dot:nth-child(4) { right: 0; top: 50%; transform: translate(50%, -50%); }
+
+
+/* ==========================================================================
+   CINEMATIC CONTACT CARD STYLING (MATCHES STACK)
+   ========================================================================== */
+
+.contact-chapter-card {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--cWidth);
+  max-width: 1200px;
+  height: 80vh;
+  min-height: 580px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #100b17 0%, #050308 100%);
+  border: 2px solid rgba(194, 164, 255, 0.3);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8),
+              0 0 50px rgba(194, 164, 255, 0.15),
+              inset 0 0 40px rgba(194, 164, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 40px;
+  z-index: 100;
+  will-change: transform, opacity;
+  margin-bottom: 0;
+}
+
+/* Space grids inside Contact Card */
+.contact-space-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(194, 164, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(194, 164, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+  opacity: 0.7;
+  perspective: 500px;
+  transform: rotateX(60deg) translateY(-30%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contact-epic-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(194, 164, 255, 0.15) 0%, transparent 70%);
+  filter: blur(100px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  animation: pulseGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.9); }
+  100% { opacity: 1.2; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.contact-chapter-content {
+  position: relative;
+  z-index: 5;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-chapter-badge {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--accentColor, #c2a4ff);
+  text-shadow: 0 0 15px rgba(194, 164, 255, 0.5);
+  margin-bottom: 20px;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.contact-chapter-title {
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 20px 0;
+  background: linear-gradient(to right, #ffffff 30%, var(--accentColor, #c2a4ff) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: -1px;
+}
+
+.contact-chapter-tagline {
+  font-size: 19px;
+  font-weight: 300;
+  color: #adacac;
+  line-height: 1.6;
+  margin: 0 0 45px 0;
+  max-width: 600px;
+}
+
+/* Action grids */
+.contact-action-center {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 30px;
+  width: 100%;
+  max-width: 750px;
+  box-sizing: border-box;
+}
+
+.action-card-primary {
+  background: rgba(194, 164, 255, 0.04);
+  border: 1px solid rgba(194, 164, 255, 0.2);
+  border-radius: 20px;
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.action-card-primary:hover {
+  background: rgba(194, 164, 255, 0.08);
+  border-color: rgba(194, 164, 255, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(194, 164, 255, 0.1);
+}
+
+.action-card-primary h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.action-card-primary p {
+  font-size: 14px;
+  color: #adacac;
+  margin: 0 0 25px 0;
+  font-weight: 300;
+}
+
+.epic-launch-btn {
+  background: linear-gradient(90deg, var(--accentColor, #c2a4ff) 0%, #aa42ff 100%);
+  color: #ffffff;
+  border: none;
+  padding: 16px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 8px 25px rgba(127, 64, 255, 0.3),
+              0 0 0 0px rgba(194, 164, 255, 0.4);
+  text-decoration: none;
+}
+
+.epic-launch-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 35px rgba(127, 64, 255, 0.5),
+              0 0 0 6px rgba(194, 164, 255, 0.15);
+}
+
+.epic-launch-btn svg {
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.epic-launch-btn:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.action-card-secondary {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.action-card-secondary:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.social-nodes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social-node-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #eae5ec;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.social-node-link svg {
+  font-size: 16px;
+  opacity: 0.6;
+  transition: all 0.3s;
+}
+
+.social-node-link:hover {
+  background: rgba(194, 164, 255, 0.1);
+  border-color: rgba(194, 164, 255, 0.3);
+  color: #ffffff;
+  padding-left: 18px;
+}
+
+.social-node-link:hover svg {
+  opacity: 1;
+  color: var(--accentColor, #c2a4ff);
+  transform: translate(2px, -2px);
+}
+
+.download-resume-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px dashed rgba(194, 164, 255, 0.3);
+  color: var(--accentColor, #c2a4ff);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.download-resume-node:hover {
+  background: rgba(194, 164, 255, 0.06);
+  border-style: solid;
+  border-color: var(--accentColor, #c2a4ff);
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MEDIA QUERIES - VERTICAL COLLAPSES INSIDE THE CARD)
+   ========================================================================== */
+
+@media only screen and (max-width: 1024px) {
+  .projects-header-container h2 {
+    font-size: 50px;
+    padding-top: 50px;
+  }
+  
+  .projects-subtitle {
+    font-size: 16px;
+  }
+
+  .wibify-sticky-content {
+    height: auto;
+    overflow: visible;
+  }
+
+  .projects-stack-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .project-chapter-card, .contact-chapter-card {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    margin-bottom: 30px;
+  }
+
+  .project-narrative-col {
+    padding: 35px 30px;
+  }
+
+  .project-story-timeline {
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+
+  .future-concepts-grid {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+
+  .project-visual-col {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    height: 350px;
+  }
+
+  .visual-image-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .wibify-orbiting-ring {
+    width: 102%;
+    height: 102%;
+    top: -1%;
+    left: -1%;
+  }
+
+  .contact-chapter-card {
+    height: auto;
+    min-height: auto;
+    padding: 50px 30px;
+  }
+
+  .contact-chapter-title {
+    font-size: 42px;
+  }
+
+  .contact-chapter-tagline {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .contact-action-center {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .projects-header-container h2 {
+    font-size: 40px;
+  }
+
+  .projects-subtitle {
+    font-size: 14px;
+  }
+
+  .project-chapter-card {
+    width: 95%;
+  }
+
+  .project-title {
+    font-size: 28px;
+  }
+
+  .project-tagline {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .project-visual-col {
+    height: 250px;
+    padding: 20px;
+  }
+
+  .contact-chapter-card {
+    width: 95%;
+  }
+
+  .contact-chapter-title {
+    font-size: 32px;
+  }
+
+  .epic-launch-btn {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-height: 750px) and (min-width: 1025px) {
+  .project-chapter-card {
+    height: 85vh;
+  }
+  
+  .project-glass-info-panel {
+    padding: 30px 40px;
+    top: 30px;
+    bottom: 30px;
+    left: 30px;
+  }
+  
+  .project-title {
+    font-size: 32px;
+  }
+  
+  .project-tagline {
+    margin-bottom: 15px;
+  }
+  
+  .project-story-timeline {
+    margin-bottom: 15px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE PRESETS AND GLASSMORPHIC CARDS STYLING
+   ========================================================================== */
+.wibify-mobile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 30px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wibify-mobile-chapter {
+  background: rgba(13, 9, 20, 0.85); /* Premium Increased glassmorphic opacity */
+  border: 1px solid rgba(194, 164, 255, 0.22);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wibify-mobile-visual {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wibify-mobile-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wibify-mobile-story {
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.wibify-chapter-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accentColor, #c2a4ff);
+  text-shadow: 0 0 10px rgba(194, 164, 255, 0.3);
+}
+
+.wibify-project-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.wibify-project-tagline {
+  font-size: 14px;
+  font-weight: 300;
+  color: #adacac;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.wibify-tech-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.wibify-tech-badge {
+  background: rgba(194, 164, 255, 0.06);
+  border: 1px solid rgba(194, 164, 255, 0.15);
+  color: #eae5ec;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+}
+
+.wibify-mobile-contact {
+  background: linear-gradient(135deg, #100b17 0%, #050308 100%);
+  border: 1px solid rgba(194, 164, 255, 0.28);
+  border-radius: 24px;
+  padding: 40px 20px;
+  margin: 20px 16px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6),
+              0 0 30px rgba(194, 164, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.wibify-contact-badge {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #c2a4ff;
+  text-shadow: 0 0 10px rgba(194, 164, 255, 0.4);
+}
+
+.wibify-contact-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.wibify-contact-tagline {
+  font-size: 14px;
+  color: #adacac;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wibify-contact-action-center {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.wibify-card-primary {
+  background: rgba(194, 164, 255, 0.04);
+  border: 1px solid rgba(194, 164, 255, 0.2);
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.wibify-card-primary h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wibify-card-primary p {
+  font-size: 12px;
+  color: #adacac;
+  margin: 0;
+  font-weight: 300;
+}
+
+.wibify-epic-btn {
+  background: linear-gradient(90deg, #c2a4ff 0%, #aa42ff 100%);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+  box-shadow: 0 4px 15px rgba(170, 66, 255, 0.3);
+}
+
+.wibify-card-secondary {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.wibify-social-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.wibify-social-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #eae5ec;
+  text-decoration: none;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wibify-social-link:hover {
+  background: rgba(194, 164, 255, 0.08);
+  border-color: rgba(194, 164, 255, 0.25);
+  color: #ffffff;
+}
+
+.wibify-resume-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px dashed rgba(194, 164, 255, 0.3);
+  padding: 12px;
+  border-radius: 8px;
+  color: #c2a4ff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wibify-resume-link:hover {
+  background: rgba(194, 164, 255, 0.05);
+  color: #ffffff;
+}
+
+/* Highly optimized card margins and paddings for narrow screens (320px, 375px, 390px, 414px) */
+@media only screen and (max-width: 480px) {
+  .wibify-mobile-list {
+    padding: 20px 8px !important;
+  }
+  
+  .wibify-mobile-chapter {
+    border-radius: 18px !important;
+  }
+  
+  .wibify-mobile-visual {
+    height: 180px !important;
+  }
+  
+  .wibify-mobile-story {
+    padding: 20px 12px !important;
+    gap: 12px !important;
+  }
+  
+  .wibify-project-title {
+    font-size: 20px !important;
+  }
+  
+  .wibify-project-tagline {
+    font-size: 13px !important;
+  }
+  
+  .wibify-tech-nodes {
+    gap: 4px !important;
+  }
+  
+  .wibify-tech-badge {
+    padding: 3px 8px !important;
+    font-size: 10px !important;
+  }
+  
+  /* Timeline process inside Mobile Project Chapter Card */
+  .project-story-timeline {
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+    padding-left: 10px !important;
+  }
+  
+  .wibify-node-header {
+    font-size: 11.5px !important;
+    margin-bottom: 2px !important;
+  }
+  
+  .wibify-node-body {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+  
+  .wibify-mobile-contact {
+    padding: 30px 12px !important;
+    margin: 20px 8px !important;
+    border-radius: 18px !important;
+  }
+  
+  .wibify-contact-title {
+    font-size: 24px !important;
+  }
+  
+  .wibify-contact-tagline {
+    font-size: 13px !important;
+  }
+  
+  .wibify-card-primary,
+  .wibify-card-secondary {
+    padding: 20px 12px !important;
+    border-radius: 14px !important;
+  }
+  
+  .wibify-epic-btn {
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+  }
+}
